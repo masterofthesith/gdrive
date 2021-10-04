@@ -9,9 +9,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/prasmussen/gdrive/auth"
-	"github.com/prasmussen/gdrive/cli"
-	"github.com/prasmussen/gdrive/drive"
+	"github.com/masterofthesith/gdrive/auth"
+	"github.com/masterofthesith/gdrive/cli"
+	"github.com/masterofthesith/gdrive/drive"
 )
 
 const ClientId = "62419754329-07568756kamcdor8l2ls2j9jrhsdna86.apps.googleusercontent.com"
