@@ -8,13 +8,13 @@ import (
 )
 
 const Name = "gdrive"
-const Version = "2.1.2"
+const Version = "2.1.3"
 
-const DefaultMaxFiles = 30
-const DefaultMaxChanges = 100
+const DefaultMaxFiles = 25
+const DefaultMaxChanges = 50
 const DefaultNameWidth = 40
 const DefaultPathWidth = 60
-const DefaultUploadChunkSize = 8 * 1024 * 1024
+const DefaultUploadChunkSize = 5 * 1024 * 1024
 const DefaultTimeout = 5 * 60
 const DefaultQuery = "trashed = false and 'me' in owners"
 const DefaultShareRole = "reader"
