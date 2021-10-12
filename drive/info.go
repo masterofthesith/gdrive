@@ -58,7 +58,7 @@ func PrintFileInfo(args PrintFileInfoArgs) {
 		kv{"Parents", formatList(f.Parents)},
 		kv{"ViewUrl", f.WebViewLink},
 		kv{"DownloadUrl", f.WebContentLink},
-		kv{"Owner", f.owners[0].emailAddress},
+		kv{"Owners", f.owners[0].emailAddress},
 	}
 
 	for _, item := range items {
