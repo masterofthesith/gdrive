@@ -5,21 +5,16 @@ import (
 	"github.com/masterofthesith/gdrive/drive"
 	"os"
 )
-
 const MinCacheFileSize = 5 * 1024 * 1024
-
 type Md5Comparer struct{}
-
 func (self Md5Comparer) Changed(local *drive.LocalFile, remote *drive.RemoteFile) bool {
 	return remote.Md5() != md5sum(local.AbsPath())
 }
-
 type CachedFileInfo struct {
 	Size     int64  `json:"size"`
 	Modified int64  `json:"modified"`
 	Md5      string `json:"md5"`
 }
-
 func NewCachedMd5Comparer(path string) CachedMd5Comparer {
 	cache := map[string]*CachedFileInfo{}
 
@@ -30,7 +25,6 @@ func NewCachedMd5Comparer(path string) CachedMd5Comparer {
 	f.Close()
 	return CachedMd5Comparer{path, cache}
 }
-
 type CachedMd5Comparer struct {
 	path  string
 	cache map[string]*CachedFileInfo
