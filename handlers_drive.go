@@ -8,7 +8,6 @@ import (
 	"os"
 	"path/filepath"
 	"time"
-
 	"github.com/masterofthesith/gdrive/auth"
 	"github.com/masterofthesith/gdrive/cli"
 	"github.com/masterofthesith/gdrive/drive"
@@ -404,18 +403,15 @@ func authCodePrompt(url string) func() string {
 		return code
 	}
 }
-
 func progressWriter(discard bool) io.Writer {
 	if discard {
 		return ioutil.Discard
 	}
 	return os.Stderr
 }
-
 func durationInSeconds(seconds int64) time.Duration {
 	return time.Second * time.Duration(seconds)
 }
-
 func conflictResolution(args cli.Arguments) drive.ConflictResolution {
 	keepLocal := args.Bool("keepLocal")
 	keepRemote := args.Bool("keepRemote")
@@ -439,7 +435,6 @@ func conflictResolution(args cli.Arguments) drive.ConflictResolution {
 
 	return drive.NoResolution
 }
-
 func checkUploadArgs(args cli.Arguments) {
 	if args.Bool("recursive") && args.Bool("delete") {
 		ExitF("--delete is not allowed for recursive uploads")
@@ -449,7 +444,6 @@ func checkUploadArgs(args cli.Arguments) {
 		ExitF("--share is not allowed for recursive uploads")
 	}
 }
-
 func checkDownloadArgs(args cli.Arguments) {
 	if args.Bool("recursive") && args.Bool("delete") {
 		ExitF("--delete is not allowed for recursive downloads")
